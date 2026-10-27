@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO: page title & description -->
+  <title>HA Unity Industries – Premium Clothing & Sportswear Manufacturer | Custom, Wholesale & Bulk</title>
+  <meta name="description" content="HA Unity Industries manufactures premium custom hoodies, T-shirts, sportswear, embroidered and boho skirts. Wholesale, bulk orders, customer designs, custom printing and embroidery. B2B factory direct." />
+  <meta name="theme-color" content="#000000" />
+  <!-- Fonts: professional typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <style>
+    /* CSS Reset & Base */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --red: #e11d2e;
+      --red-dark: #b81625;
+      --gray-light: #f4f4f4;
+      --gray-mid: #d9d9d9;
+      --gray-text: #4a4a4a;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --radius: 10px;
+      --max-width: 1200px;
+      --transition: 0.3s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    /* Utilities */
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: 20px;
+    }
+
+    .section {
+      padding-block: 64px;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding-block: 88px;
+      }
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--gray-text);
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-center .section-subtitle {
+      margin-inline: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: background var(--transition), color var(--transition), border-color var(--transition), transform 0.15s ease;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
+    }
+
+    .btn-primary:hover {
+      background: var(--red-dark);
+      border-color: var(--red-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-dark {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .btn-dark:hover {
+      background: #222;
+      border-color: #222;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: var(--white);
+      border-color: #25D366;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5b;
+      border-color: #1ebe5b;
+    }
+
+    .btn-email {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    .btn-email:hover {
+      background: #222;
+      border-color: #222;
+    }
+
+    .btn-block-mobile {
+      width: 100%;
+    }
+
+    @media (min-width: 500px) {
+      .btn-block-mobile {
+        width: auto;
+      }
+    }
+
+    /* Header / Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: background var(--transition);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 64px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-mark {
+      display: inline-block;
+      width: 8px;
+      height: 22px;
+      background: var(--red);
+      border-radius: 2px;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+    }
+
+    @media (min-width: 900px) {
+      .nav-links {
+        display: flex;
+      }
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: none;
+    }
+
+    @media (min-width: 900px) {
+      .nav-cta {
+        display: inline-flex;
+        padding: 10px 20px;
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      gap: 5px;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    @media (min-width: 900px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    .menu-toggle .bar {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform-origin: center;
+    }
+
+    .menu-toggle.open .bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile nav panel */
+    .mobile-nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      inset: 64px 0 0 0;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 32px 24px;
+      gap: 20px;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      z-index: 999;
+      overflow-y: auto;
+    }
+
+    .mobile-nav.open {
+      transform: translateX(0);
+    }
+
+    .mobile-nav a {
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 600;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      transition: color var(--transition);
+    }
+
+    .mobile-nav a:hover {
+      color: var(--red);
+    }
+
+    .mobile-nav .mobile-cta {
+      margin-top: 12px;
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      background: var(--black);
+      color: var(--white);
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(225, 29, 46, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 80%, rgba(225, 29, 46, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -15%;
+      top: 50%;
+      width: 80%;
+      height: 80%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M0 100 Q 50 0 100 100 T 200 100" stroke="%23e11d2e" fill="none" stroke-width="0.5" opacity="0.12"/><path d="M0 120 Q 50 20 100 120 T 200 120" stroke="%23e11d2e" fill="none" stroke-width="0.5" opacity="0.1"/></svg>') no-repeat center/contain;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+      padding-block: 80px;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: rgba(225, 29, 46, 0.1);
+      border: 1px solid rgba(225, 29, 46, 0.25);
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--red);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 560px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 36px;
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-stats .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stats .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-stats .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    /* Products / Gallery */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 600px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid #e8e8e8;
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow var(--transition), transform var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .product-card__image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--gray-light);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b0b0b0;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 16px;
+    }
+
+    .product-card__image::before {
+      content: 'Product Image Placeholder';
+      font-weight: 500;
+    }
+
+    .product-card__image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-card__body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-card__tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--red);
+      background: rgba(225, 29, 46, 0.08);
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+
+    .product-card__title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .product-card__desc {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    .product-card__link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--red);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+    }
+
+    .product-card__link:hover {
+      gap: 10px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+      }
+    }
+
+    .about-visual {
+      background: var(--black);
+      border-radius: var(--radius);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-visual::before {
+      content: 'Factory / Team Image Placeholder';
+      font-weight: 500;
+      z-index: 1;
+    }
+
+    .about-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(225, 29, 46, 0.25) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .about-text h2 {
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      color: var(--gray-text);
+      font-size: 0.98rem;
+      margin-bottom: 16px;
+    }
+
+    .about-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .about-list li::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* Manufacturing */
+    .mfg-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .mfg-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .mfg-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .mfg-card {
+      padding: 28px 24px;
+      border: 1px solid #e8e8e8;
+      border-radius: var(--radius);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .mfg-card:hover {
+      border-color: var(--red);
+      box-shadow: 0 8px 24px rgba(225, 29, 46, 0.08);
+    }
+
+    .mfg-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(225, 29, 46, 0.08);
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .mfg-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .mfg-card p {
+      font-size: 0.9rem;
+      color: var(--gray-text);
+    }
+
+    /* Wholesale */
+    .wholesale {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .wholesale .section-subtitle {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .wholesale-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .wholesale-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .wholesale-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .wholesale-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(225, 29, 46, 0.5);
+    }
+
+    .wholesale-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .wholesale-card h3 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .wholesale-card p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .wholesale-cta {
+      margin-top: 36px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 64px;
+      }
+    }
+
+    .contact-info h2 {
+      margin-bottom: 12px;
+    }
+
+    .contact-info p {
+      color: var(--gray-text);
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-detail .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      color: var(--gray-text);
+      margin-bottom: 2px;
+    }
+
+    .contact-detail .value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    .contact-detail .value a {
+      color: var(--red);
+    }
+
+    .contact-detail .value a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Form */
+    .form-card {
+      background: var(--white);
+      border: 1px solid #e8e8e8;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (min-width: 600px) {
+      .form-card {
+        padding: 36px 32px;
+      }
+    }
+
+    .form-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .form-card .form-note {
+      font-size: 0.85rem;
+      color: var(--gray-text);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .form-note strong {
+      color: var(--red);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .form-group label .req {
+      color: var(--red);
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #dcdcdc;
+      border-radius: 8px;
+      background: #fafafa;
+      font-size: 0.95rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      color: var(--black);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(225, 29, 46, 0.12);
+      background: var(--white);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 500px) {
+      .form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 6px;
+    }
+
+    .form-status {
+      margin-top: 14px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: none;
+    }
+
+    .form-status.error {
+      display: block;
+      color: var(--red);
+    }
+
+    .form-status.info {
+      display: block;
+      color: #0a7d33;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--black);
+      color: rgba(255, 255, 255, 0.6);
+      padding-block: 48px 32px;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    @media (min-width: 700px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      max-width: 360px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul a {
+      color: rgba(255, 255, 255, 0.55);
+      transition: color var(--transition);
+    }
+
+    .footer-col ul a:hover {
+      color: var(--red);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-bottom a:hover {
+      color: var(--red);
+    }
+
+    /* Subtle reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .product-card,
+      .mfg-card,
+      .wholesale-card {
+        transition: none;
+      }
+    }
+
+    /* Placeholder styling for images when no src */
+    .img-placeholder {
+      background: linear-gradient(135deg, #f0f0f0 0%, #e4e4e4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0a0a0;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 16px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+    }
+
+    .img-placeholder[data-label]::before {
+      content: attr(data-label);
+    }
+
+    /* Focus visible for accessibility */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="logo" aria-label="HA Unity Industries Home">
+        <span class="logo-mark"></span>
+        HA <span>Unity</span> Industries
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#manufacturing">Manufacturing</a>
+        <a href="#wholesale">Wholesale</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary nav-cta">Request a Quote</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile navigation panel -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#products">Products</a>
+    <a href="#about">About Us</a>
+    <a href="#manufacturing">Manufacturing</a>
+    <a href="#wholesale">Wholesale</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn btn-primary mobile-cta">Request a Quote</a>
+  </nav>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <span class="hero-badge">B2B Manufacturing · Factory Direct</span>
+          <h1>Premium <span class="highlight">Clothing &amp; Sportswear</span> Manufacturing for Global Brands</h1>
+          <p>Custom hoodies, T-shirts, sportswear, embroidered and boho skirts — produced to your specifications. Bulk orders, wholesale pricing, and customer-provided designs welcome.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
+            <a href="#products" class="btn btn-outline">View Products</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-value">OEM</span>
+              <span class="stat-label">Custom Manufacturing</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">Bulk</span>
+              <span class="stat-label">Wholesale Orders</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">B2B</span>
+              <span class="stat-label">Business Focused</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-title">Our Product Range</h2>
+          <p class="section-subtitle">Manufactured to your specifications. Replace the image placeholders below with your own product photos to showcase your actual work.</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <article class="product-card reveal">
+            <div class="product-card__image">
+              <!-- Replace the src below with your real product image URL -->
+              <img src="" alt="Custom hoodies and T-shirts manufacturing" loading="lazy" onerror="this.style.display='none'">
+              <div class="img-placeholder" data-label="Custom Hoodies &amp; T-Shirts — Image Placeholder"></div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Apparel</span>
+              <h3 class="product-card__title">Custom Hoodies &amp; T-Shirts</h3>
+              <p class="product-card__desc">Heavyweight hoodies, crewnecks, and premium T-shirts in your preferred fabrics, fits, and colours.</p>
+              <a href="#contact" class="product-card__link">Request pricing →</a>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card reveal">
+            <div class="product-card__image">
+              <img src="" alt="Embroidered and boho skirts manufacturing" loading="lazy" onerror="this.style.display='none'">
+              <div class="img-placeholder" data-label="Embroidered &amp; Boho Skirts — Image Placeholder"></div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Boho Collection</span>
+              <h3 class="product-card__title">Embroidered &amp; Boho Skirts</h3>
+              <p class="product-card__desc">Intricate embroidery and bohemian silhouettes crafted with attention to detail and quality finishing.</p>
+              <a href="#contact" class="product-card__link">Request pricing →</a>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card reveal">
+            <div class="product-card__image">
+              <img src="" alt="Custom sportswear manufacturing" loading="lazy" onerror="this.style.display='none'">
+              <div class="img-placeholder" data-label="Custom Sportswear — Image Placeholder"></div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Performance</span>
+              <h3 class="product-card__title">Custom Sportswear</h3>
+              <p class="product-card__desc">Performance wear built for movement — jerseys, tracksuits, activewear and team kits.</p>
+              <a href="#contact" class="product-card__link">Request pricing →</a>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card reveal">
+            <div class="product-card__image">
+              <img src="" alt="Bulk and wholesale manufacturing" loading="lazy" onerror="this.style.display='none'">
+              <div class="img-placeholder" data-label="Bulk &amp; Wholesale — Image Placeholder"></div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Wholesale</span>
+              <h3 class="product-card__title">Bulk &amp; Wholesale Manufacturing</h3>
+              <p class="product-card__desc">Scalable production for retailers, brands, and distributors. Competitive bulk pricing.</p>
+              <a href="#wholesale" class="product-card__link">Learn more →</a>
+            </div>
+          </article>
+
+          <!-- Product 5 -->
+          <article class="product-card reveal">
+            <div class="product-card__image">
+              <img src="" alt="Customer provided designs and logos" loading="lazy" onerror="this.style.display='none'">
+              <div class="img-placeholder" data-label="Your Designs &amp; Logos — Image Placeholder"></div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">OEM</span>
+              <h3 class="product-card__title">Customer-Provided Designs</h3>
+              <p class="product-card__desc">Send us your artwork, logos, and tech packs. We manufacture exactly to your specifications.</p>
+              <a href="#contact" class="product-card__link">Submit your design →</a>
+            </div>
+          </article>
+
+          <!-- Product 6 -->
+          <article class="product-card reveal">
+            <div class="product-card__image">
+              <img src="" alt="Custom printing and embroidery services" loading="lazy" onerror="this.style.display='none'">
+              <div class="img-placeholder" data-label="Printing &amp; Embroidery — Image Placeholder"></div>
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">Customisation</span>
+              <h3 class="product-card__title">Custom Printing &amp; Embroidery</h3>
+              <p class="product-card__desc">Screen printing, DTG, sublimation, and embroidery — applied to your exact standards.</p>
+              <a href="#contact" class="product-card__link">Discuss your project →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section" id="about" style="background: var(--gray-light);">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <!-- Replace this placeholder with a real factory or team image -->
+            <div style="position: absolute; inset: 0; background: #1a1a1a; display: flex; align-items: center; justify-content: center;">
+              <span style="color: rgba(255,255,255,0.35); font-size: 0.9rem; font-weight: 500; text-align: center; padding: 24px;">Factory / Team Image Placeholder</span>
+            </div>
+          </div>
+          <div class="about-text reveal">
+            <h2 class="section-title">About HA Unity Industries</h2>
+            <p>HA Unity Industries is a clothing and sportswear manufacturing company serving businesses, brands, and organisations. We focus on quality production, reliable communication, and flexible order volumes.</p>
+            <p>From custom hoodies and T-shirts to embroidered skirts and performance sportswear, we work with customer-provided designs and logos. Whether you need a small batch or bulk wholesale production, we are set up to support your requirements.</p>
+            <ul class="about-list">
+              <li>Custom manufacturing</li>
+              <li>Bulk &amp; wholesale orders</li>
+              <li>Customer designs accepted</li>
+              <li>Printing &amp; embroidery</li>
+              <li>B2B focused service</li>
+              <li>Responsive communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MANUFACTURING & CUSTOMISATION ========== -->
+    <section class="section" id="manufacturing">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-title">Manufacturing &amp; Customisation</h2>
+          <p class="section-subtitle">We handle the production process from your specifications to finished garments. Here is how we work with you.</p>
+        </div>
+
+        <div class="mfg-grid">
+          <div class="mfg-card reveal">
+            <div class="mfg-icon">01</div>
+            <h3>Design &amp; Tech Pack Review</h3>
+            <p>Share your designs, logos, and specifications. We review and confirm feasibility, materials, and timelines before production.</p>
+          </div>
+          <div class="mfg-card reveal">
+            <div class="mfg-icon">02</div>
+            <h3>Fabric &amp; Material Selection</h3>
+            <p>Choose from a range of fabrics, weights, and finishes. We help match materials to your intended use and price point.</p>
+          </div>
+          <div class="mfg-card reveal">
+            <div class="mfg-icon">03</div>
+            <h3>Custom Printing &amp; Embroidery</h3>
+            <p>Screen printing, DTG, sublimation, and embroidery. We apply your artwork with precision and consistency across the order.</p>
+          </div>
+          <div class="mfg-card reveal">
+            <div class="mfg-icon">04</div>
+            <h3>Sampling &amp; Approval</h3>
+            <p>We produce samples for your approval before full production, ensuring the fit, feel, and finish meet your expectations.</p>
+          </div>
+          <div class="mfg-card reveal">
+            <div class="mfg-icon">05</div>
+            <h3>Bulk Production</h3>
+            <p>Once approved, we proceed with bulk manufacturing with quality checks throughout the process.</p>
+          </div>
+          <div class="mfg-card reveal">
+            <div class="mfg-icon">06</div>
+            <h3>Packing &amp; Dispatch</h3>
+            <p>Finished garments are packed according to your requirements and prepared for dispatch or pickup.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHOLESALE ========== -->
+    <section class="section wholesale" id="wholesale">
+      <div class="container">
+        <div class="reveal">
+          <h2 class="section-title" style="color: var(--white);">Wholesale &amp; Bulk Orders</h2>
+          <p class="section-subtitle">We support businesses with volume production. Below is what you can expect when placing a wholesale order.</p>
+        </div>
+
+        <div class="wholesale-grid">
+          <div class="wholesale-card reveal">
+            <h3><span class="num">1</span> Minimum Order Quantities</h3>
+            <p>MOQs vary by product and customisation. Contact us with your requirements for a specific quote.</p>
+          </div>
+          <div class="wholesale-card reveal">
+            <h3><span class="num">2</span> Tiered Bulk Pricing</h3>
+            <p>Pricing improves with volume. Share your target quantity and we will provide a wholesale quotation.</p>
+          </div>
+          <div class="wholesale-card reveal">
+            <h3><span class="num">3</span> Lead Times</h3>
+            <p>Production timelines depend on order size, complexity, and material availability. We confirm timelines before production.</p>
+          </div>
+        </div>
+
+        <div class="wholesale-cta reveal">
+          <a href="#contact" class="btn btn-primary">Request Wholesale Pricing</a>
+          <a href="#contact" class="btn btn-outline">Discuss Bulk Order</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact" style="background: var(--gray-light);">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Ready to discuss your manufacturing needs? Reach out via WhatsApp, email, or the inquiry form. Replace the placeholder contact details below with your real information.</p>
+
+            <div class="contact-details">
+              <!-- WHATSAPP PLACEHOLDER -->
+              <div class="contact-detail">
+                <div class="icon">💬</div>
+                <div>
+                  <div class="label">WhatsApp</div>
+                  <div class="value">
+                    <!-- Replace the number below with your WhatsApp number in international format (no + or spaces) -->
+                    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" id="whatsappLink">+1 (234) 567-890 [PLACEHOLDER]</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- EMAIL PLACEHOLDER -->
+              <div class="contact-detail">
+                <div class="icon">✉️</div>
+                <div>
+                  <div class="label">Email</div>
+                  <div class="value">
+                    <!-- Replace the email below with your real email address -->
+                    <a href="mailto:info@haunityindustries.com" id="emailLink">info@haunityindustries.com [PLACEHOLDER]</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COMPANY DETAILS PLACEHOLDER -->
+              <div class="contact-detail">
+                <div class="icon">🏢</div>
+                <div>
+                  <div class="label">Company</div>
+                  <div class="value">HA Unity Industries<br><span style="font-weight: 400; color: var(--gray-text); font-size: 0.85rem;">[Add your business address / factory location here]</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-buttons">
+              <!-- Replace the placeholder numbers/addresses above; the links below will still work once you update them -->
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">WhatsApp Us</a>
+              <a href="mailto:info@haunityindustries.com" class="btn btn-email">Send Email</a>
+            </div>
+          </div>
+
+          <!-- INQUIRY FORM -->
+          <div class="form-card reveal">
+            <h3>Customer Inquiry Form</h3>
+            <p class="form-note">
+              <strong>Note:</strong> This is a static HTML form. To actually receive inquiries, you need a form service (like Formspree, Getform, or Web3Forms — some have free tiers) or your own backend. Until then, the form will show a message and direct you to WhatsApp or email.
+            </p>
+
+            <form id="inquiryForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name <span class="req">*</span></label>
+                  <input type="text" id="name" name="name" placeholder="e.g. Alex Johnson" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">Phone / WhatsApp</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+1 234 567 890" autocomplete="tel">
+                </div>
+                <div class="form-group">
+                  <label for="product">Product Interest</label>
+                  <select id="product" name="product">
+                    <option value="">Select a product</option>
+                    <option value="Hoodies & T-Shirts">Custom Hoodies &amp; T-Shirts</option>
+                    <option value="Embroidered & Boho Skirts">Embroidered &amp; Boho Skirts</option>
+                    <option value="Sportswear">Custom Sportswear</option>
+                    <option value="Bulk / Wholesale">Bulk / Wholesale Order</option>
+                    <option value="Custom Design">Customer-Provided Design</option>
+                    <option value="Printing & Embroidery">Custom Printing &amp; Embroidery</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Project Details <span class="req">*</span></label>
+                <textarea id="message" name="message" placeholder="Tell us about quantities, styles, fabrics, printing/embroidery requirements, timelines, etc." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit">Send Inquiry</button>
+
+              <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-mark"></span>
+            HA <span>Unity</span> Industries
+          </div>
+          <p>Clothing and sportswear manufacturing. Custom hoodies, T-shirts, sportswear, embroidered and boho skirts. Bulk and wholesale orders, customer designs, custom printing and embroidery.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#manufacturing">Manufacturing</a></li>
+            <li><a href="#wholesale">Wholesale</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">WhatsApp [PLACEHOLDER]</a></li>
+            <li><a href="mailto:info@haunityindustries.com">info@haunityindustries.com [PLACEHOLDER]</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> HA Unity Industries. All rights reserved.</span>
+        <span>Built with HTML, CSS &amp; JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ===== Mobile menu toggle ===== */
+      var menuToggle = document.getElementById('menuToggle');
+      var mobileNav = document.getElementById('mobileNav');
+
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener('click', function () {
+          var isOpen = mobileNav.classList.toggle('open');
+          menuToggle.classList.toggle('open', isOpen);
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close mobile nav when a link is clicked
+        mobileNav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileNav.classList.remove('open');
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+
+        // Close on resize to desktop
+        window.addEventListener('resize', function () {
+          if (window.innerWidth >= 900 && mobileNav.classList.contains('open')) {
+            mobileNav.classList.remove('open');
+            menuToggle.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+
+      /* ===== Scroll reveal animation ===== */
+      var revealElements = document.querySelectorAll('.reveal');
+
+      if ('IntersectionObserver' in window && revealElements.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        // Fallback: show everything if IntersectionObserver is not supported
+        revealElements.forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }
+
+      /* ===== Inquiry form handling ===== */
+      var form = document.getElementById('inquiryForm');
+      var statusEl = document.getElementById('formStatus');
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Simple client-side validation
+          var name = document.getElementById('name').value.trim();
+          var email = document.getElementById('email').value.trim();
+          var message = document.getElementById('message').value.trim();
+
+          if (!name || !email || !message) {
+            statusEl.className = 'form-status error';
+            statusEl.textContent = 'Please fill in all required fields (name, email, and project details).';
+            return;
+          }
+
+          // Basic email pattern check
+          var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            statusEl.className = 'form-status error';
+            statusEl.textContent = 'Please enter a valid email address.';
+            return;
+          }
+
+          // ---------------------------------------------------------------
+          // IMPORTANT: This is a static HTML form with no backend.
+          // To actually receive submissions, sign up for a free form service
+          // (e.g., Formspree, Getform, Web3Forms) and update the form's
+          // "action" and "method" attributes, or use their JavaScript snippet.
+          // Until then, we show a clear message and direct the user to
+          // WhatsApp or email.
+          // ---------------------------------------------------------------
+
+          statusEl.className = 'form-status info';
+          statusEl.innerHTML =
+            'Thank you, ' + escapeHtml(name) + '! This static form is not connected to a backend yet. ' +
+            'To send your inquiry now, please use ' +
+            '<a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:600;">WhatsApp</a> or ' +
+            '<a href="mailto:info@haunityindustries.com" style="color:var(--red);font-weight:600;">email</a>.';
+
+          // Optionally reset the form after showing the message
+          form.reset();
+        });
+      }
+
+      /* Helper to escape HTML for safe display */
+      function escapeHtml(text) {
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode(text));
+        return div.innerHTML;
+      }
+
+      /* ===== Dynamic year in footer ===== */
+      var yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      /* ===== Smooth scrolling fallback for browsers without CSS scroll-behavior ===== */
+      if (!('scrollBehavior' in document.documentElement.style)) {
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+          anchor.addEventListener('click', function (e) {
+            var targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            var target = document.querySelector(targetId);
+            if (target) {
+              e.preventDefault();
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
