@@ -1450,7 +1450,7 @@
               <strong>Note:</strong> This is a static HTML form. To actually receive inquiries, you need a form service (like Formspree, Getform, or Web3Forms — some have free tiers) or your own backend. Until then, the form will show a message and direct you to WhatsApp or email.
             </p>
 
-            <form id="inquiryForm" novalidate>
+           <form id="inquiryForm" action="https://formsubmit.app/f/q2npr5mx3n" method="POST" novalidate>
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Your Name <span class="req">*</span></label>
@@ -1636,15 +1636,10 @@
           // WhatsApp or email.
           // ---------------------------------------------------------------
 
-          statusEl.className = 'form-status info';
-          statusEl.innerHTML =
-            'Thank you, ' + escapeHtml(name) + '! This static form is not connected to a backend yet. ' +
-            'To send your inquiry now, please use ' +
-            '<a href="https://wa.me/+923134772312" target="_blank" rel="noopener noreferrer" style="color:var(--red);font-weight:600;">WhatsApp</a> or ' +
-            '<a href="mailto:info@habibullahhajazi@gmail.com" style="color:var(--red);font-weight:600;">email</a>.';
+          
+form.submit();
+return;
 
-          // Optionally reset the form after showing the message
-          form.reset();
         });
       }
 
