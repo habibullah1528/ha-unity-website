@@ -57,6 +57,7 @@
       placeholder="Product name">
     <button id="uploadBtn">Upload photo</button>
     <button id="logoutBtn">Logout</button>
+    <button id="forgotBtn" type="button">Forgot Password?</button>
   </section>
 
   <p id="status" role="status"></p>
@@ -76,6 +77,26 @@
 
   const $ = id => document.getElementById(id);
   const status = message => $("status").textContent = message;
+  $("forgotBtn").addEventListener("click", async () => {
+  const email = $("email").value.trim();
+
+  if (!email) {
+    status("Please enter your admin email first.");
+    return;
+  }
+
+  status("Requesting password recovery...");
+
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: "https://habibullah1528.github.io/ha-unity-website/reset-password.html"
+  });
+
+  if (error) {
+    status("Recovery request failed. Please wait and try later.");
+  } else {
+    status("If the request was accepted, check your email.");
+  }
+});
 
   $("loginBtn").addEventListener("click", async () => {
     status("Signing in...");
