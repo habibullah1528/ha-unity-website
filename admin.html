@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HA Unity Industries — Admin</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 520px;
+      margin: 35px auto;
+      padding: 20px;
+      background: #f5f6f8;
+      color: #171717;
+    }
+    main {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 3px 18px #0001;
+    }
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 13px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #171717;
+      color: white;
+      cursor: pointer;
+    }
+    #status { overflow-wrap: anywhere; }
+    img { max-width: 100%; margin-top: 12px; }
+  </style>
+</head>
+<body>
+<main>
+  <h2>HA Unity Industries</h2>
+  <h3>Product Photo Admin</h3>
+
+  <section id="login">
+    <input id="email" type="email"
+      placeholder="Admin email" autocomplete="username">
+    <input id="password" type="password"
+      placeholder="Admin password" autocomplete="current-password">
+    <button id="loginBtn">Login</button>
+  </section>
+
+  <section id="uploader" hidden>
+    <p>Select a product photo from your phone.</p>
+    <input id="photo" type="file" accept="image/*">
+    <input id="productName" type="text"
+      placeholder="Product name">
+    <button id="uploadBtn">Upload photo</button>
+    <button id="logoutBtn">Logout</button>
+  </section>
+
+  <p id="status" role="status"></p>
+  <img id="preview" alt="Selected product preview" hidden>
+</main>
+
+<script type="module">
+  import { createClient } from
+    "https://esm.sh/@supabase/supabase-js@2";
+
+  const SUPABASE_URL = "https://pdckdoznpzuvonxkxxow.supabase.co/rest/v1/";
+  const SUPABASE_KEY = "sb_publishable_HnGAJ0Mir7d5KRcvWCS7Ew_8hbwalNx";
+
+  const supabase = createClient(
+    SUPABASE_URL, SUPABASE_KEY
+  );
+
+  const $ = id => document.getElementById(id);
+  const status = message => $("status").textContent = message;
+
+  $("loginBtn").addEventListener("click", async () => {
+    status("Signing in...");
+    const { error } = await supabase.auth.signInWithPassword({
+      email: $("email").value.trim(),
+      password: $("password").value
+    });
+
+    if (error) {
+      status("Login failed. Check your email and password.");
+      return;
+    }
+
+    $("login").hidden = true;
+    $("uploader").hidden = false;
+    status("Login successful.");
+  });
+
+  $("photo").addEventListener("change", () => {
+    const file = $("photo").files[0];
+    if (!file) return;
+    $("preview").src = URL.createObjectURL(file);
+    $("preview").hidden = false;
+  });
+
+  $("uploadBtn").addEventListener("click", async () => {
+    const file = $("photo").files[0];
+    const name = $("productName").value.trim();
+
+    if (!file || !name) {
+      status("Choose a photo and enter a product name.");
+      return;
+    }
+    if (!file.type.startsWith("image/")) {
+      status("Please choose an image file.");
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      status("Please choose an image under 5 MB.");
+      return;
+    }
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+      status("Please log in again.");
+      return;
+    }
+
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+    const path = `${user.id}/${Date.now()}-${safeName}`;
+
+    status("Uploading photo...");
+    const { error } = await supabase.storage
+      .from("product-public")
+      .upload(path, file, {
+        contentType: file.type,
+        upsert: false
+      });
+
+    if (error) {
+      status("Upload failed. Check Storage policy and login.");
+      return;
+    }
+
+    const { data } = supabase.storage
+      .from("product-public")
+      .getPublicUrl(path);
+
+    status("Uploaded: " + name + "\nPublic photo URL: " + data.publicUrl);
+  });
+
+  $("logoutBtn").addEventListener("click", async () => {
+    await supabase.auth.signOut();
+    $("login").hidden = false;
+    $("uploader").hidden = true;
+    status("Logged out.");
+  });
+</script>
+</body>
+</html>
