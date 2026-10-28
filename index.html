@@ -1513,7 +1513,138 @@
         </div>
       </div>
     </section>
+<!-- ============================================================
+         PREMIUM PRODUCT GALLERY (new section — does not replace #products)
+         All "Request a Quote" buttons scroll to #contact (your existing form).
+         Sample images are licensed placeholders — replace with your real photos.
+         ============================================================ -->
+    <section class="section hg-gallery" id="gallery" aria-labelledby="galleryTitle">
+      <div class="container">
+        <div class="hg-head">
+          <span class="hg-eyebrow">Product Gallery</span>
+          <h2 class="hg-title" id="galleryTitle">Manufacturing <span>Capabilities</span></h2>
+          <p class="hg-desc">
+            A visual overview of the product categories we manufacture. Filter by category and
+            send a quote request using any button below — it will jump you to our inquiry form.
+          </p>
+          <p class="hg-notice">
+            ⚠️ Sample photos shown are properly licensed placeholder images and are <strong>not</strong>
+            photographs of our own stock or production. They will be replaced with real product photos.
+          </p>
+        </div>
 
+        <!-- FILTERS -->
+        <div class="hg-filters" role="group" aria-label="Filter products by category">
+          <button type="button" class="hg-filter" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="hg-filter" data-filter="hoodies" aria-pressed="false">Hoodies &amp; T-Shirts</button>
+          <button type="button" class="hg-filter" data-filter="sportswear" aria-pressed="false">Sportswear</button>
+          <button type="button" class="hg-filter" data-filter="skirts" aria-pressed="false">Embroidered Skirts</button>
+        </div>
+
+        <!-- GRID -->
+        <div class="hg-grid" id="hgGrid">
+
+          <!-- 1: Hoodie -->
+          <article class="hg-card" data-category="hoodies">
+            <div class="hg-card-media">
+              <img
+                src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=800&q=80"
+                alt="Sample photo: plain hooded sweatshirt (placeholder)"
+                loading="lazy" width="800" height="600">
+              <span class="hg-badge">Sample Image</span>
+            </div>
+            <div class="hg-card-body">
+              <h3 class="hg-card-title">Custom Hoodies</h3>
+              <p class="hg-card-desc">Heavyweight and mid-weight hoodies manufactured to your fabric, fit, and colour specification.</p>
+              <a href="#contact" class="hg-quote-btn">Request a Quote</a>
+            </div>
+          </article>
+
+          <!-- 2: T-Shirt -->
+          <article class="hg-card" data-category="hoodies">
+            <div class="hg-card-media">
+              <img
+                src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
+                alt="Sample photo: plain cotton T-shirt (placeholder)"
+                loading="lazy" width="800" height="600">
+              <span class="hg-badge">Sample Image</span>
+            </div>
+            <div class="hg-card-body">
+              <h3 class="hg-card-title">Premium T-Shirts</h3>
+              <p class="hg-card-desc">Crewneck and custom-fit T-shirts produced in your chosen cotton blends and GSM.</p>
+              <a href="#contact" class="hg-quote-btn">Request a Quote</a>
+            </div>
+          </article>
+
+          <!-- 3: Sportswear -->
+          <article class="hg-card" data-category="sportswear">
+            <div class="hg-card-media">
+              <img
+                src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80"
+                alt="Sample photo: athletic sportswear (placeholder)"
+                loading="lazy" width="800" height="600">
+              <span class="hg-badge">Sample Image</span>
+            </div>
+            <div class="hg-card-body">
+              <h3 class="hg-card-title">Performance Sportswear</h3>
+              <p class="hg-card-desc">Activewear, jerseys, and team kits manufactured in performance fabrics to your specification.</p>
+              <a href="#contact" class="hg-quote-btn">Request a Quote</a>
+            </div>
+          </article>
+
+          <!-- 4: Sportswear -->
+          <article class="hg-card" data-category="sportswear">
+            <div class="hg-card-media">
+              <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80"
+                alt="Sample photo: athletic training wear (placeholder)"
+                loading="lazy" width="800" height="600">
+              <span class="hg-badge">Sample Image</span>
+            </div>
+            <div class="hg-card-body">
+              <h3 class="hg-card-title">Training &amp; Activewear</h3>
+              <p class="hg-card-desc">Training tops, leggings, and shorts — built for movement with your branding applied.</p>
+              <a href="#contact" class="hg-quote-btn">Request a Quote</a>
+            </div>
+          </article>
+
+          <!-- 5: Embroidered Skirt -->
+          <article class="hg-card" data-category="skirts">
+            <div class="hg-card-media">
+              <img
+                src="https://images.unsplash.com/photo-1583496661160-fb5886a13d27?auto=format&fit=crop&w=800&q=80"
+                alt="Sample photo: long flowing skirt (placeholder)"
+                loading="lazy" width="800" height="600">
+              <span class="hg-badge">Sample Image</span>
+            </div>
+            <div class="hg-card-body">
+              <h3 class="hg-card-title">Embroidered Boho Skirts</h3>
+              <p class="hg-card-desc">Bohemian silhouettes with custom embroidery, produced to your design and fabric choices.</p>
+              <a href="#contact" class="hg-quote-btn">Request a Quote</a>
+            </div>
+          </article>
+
+          <!-- 6: Embroidered Skirt -->
+          <article class="hg-card" data-category="skirts">
+            <div class="hg-card-media">
+              <img
+                src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80"
+                alt="Sample photo: patterned maxi skirt (placeholder)"
+                loading="lazy" width="800" height="600">
+              <span class="hg-badge">Sample Image</span>
+            </div>
+            <div class="hg-card-body">
+              <h3 class="hg-card-title">Embroidered Maxi Skirts</h3>
+              <p class="hg-card-desc">Longer cuts with detailed embroidery work — manufactured to match your tech pack.</p>
+              <a href="#contact" class="hg-quote-btn">Request a Quote</a>
+            </div>
+          </article>
+
+          <!-- Empty state (only shows if a filter matches nothing) -->
+          <p class="hg-empty" id="hgEmpty" hidden>No products in this category yet.</p>
+        </div>
+      </div>
+    </section>
     <!-- ========== ABOUT ========== -->
     <section class="section" id="about" style="background: var(--gray-light);">
       <div class="container">
