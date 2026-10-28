@@ -92,11 +92,11 @@
     redirectTo: "https://habibullah1528.github.io/ha-unity-website/reset-password.html"
   });
 
-  if (error) {
-    status("Recovery request failed. Please wait and try later.");
-  } else {
-    status("If the request was accepted, check your email.");
-  }
+ if (error) {
+  status("Recovery error: " + error.message);
+} else {
+  status("If the request was accepted, check your email.");
+}
 });
 
   $("loginBtn").addEventListener("click", async () => {
