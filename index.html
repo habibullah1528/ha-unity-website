@@ -2024,5 +2024,49 @@ return;
       }
     })();
   </script>
+  <!-- ============================================================
+       PREMIUM PRODUCT GALLERY — FILTER SCRIPT
+       Independent of the existing site script. Does NOT touch the
+       inquiry form, its endpoint, or its submission JavaScript.
+       ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      var grid = document.getElementById('hgGrid');
+      var empty = document.getElementById('hgEmpty');
+      var filters = document.querySelectorAll('.hg-filter');
+      if (!grid || !filters.length) return;
+
+      filters.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var filter = btn.getAttribute('data-filter');
+
+          // Toggle active state on buttons
+          filters.forEach(function (b) {
+            b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+          });
+
+          // Show/hide cards
+          var cards = grid.querySelectorAll('.hg-card');
+          var visibleCount = 0;
+          cards.forEach(function (card) {
+            var cat = card.getAttribute('data-category');
+            var match = (filter === 'all') || (cat === filter);
+            card.hidden = !match;
+            if (match) visibleCount++;
+          });
+
+          // Empty state
+          if (empty) empty.hidden = visibleCount > 0;
+
+          // Optional: update URL hash for shareability (no reload)
+          if (history.replaceState) {
+            history.replaceState(null, '', '#gallery');
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
