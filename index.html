@@ -1346,6 +1346,198 @@
       .hg-card:hover { transform: none; }
       .hg-card:hover .hg-card-media img { transform: none; }
     }
+    
+/* ===== HA UNITY PREMIUM HERO ===== */
+.hhero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--black, #111111);
+  color: var(--white, #ffffff);
+}
+
+.hhero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hhero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+
+.hhero-shape--1 {
+  width: min(60vw, 650px);
+  aspect-ratio: 1;
+  top: -30%;
+  right: -12%;
+  background: rgba(225, 29, 46, 0.30);
+}
+
+.hhero-shape--2 {
+  width: min(45vw, 500px);
+  aspect-ratio: 1;
+  bottom: -35%;
+  left: -15%;
+  background: rgba(225, 29, 46, 0.16);
+}
+
+.hhero-shape--3 {
+  top: 10%;
+  right: 12%;
+  width: 2px;
+  height: 75%;
+  border-radius: 0;
+  background: linear-gradient(transparent, var(--red, #e11d2e), transparent);
+  transform: rotate(14deg);
+}
+
+.hhero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 70px 70px;
+}
+
+.hhero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: clamp(70px, 11vw, 135px);
+  padding-bottom: clamp(70px, 11vw, 135px);
+}
+
+.hhero-copy {
+  max-width: 850px;
+}
+
+.hhero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+  padding: 9px 15px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 50px;
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.85);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.hhero-eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--red, #e11d2e);
+}
+
+.hhero-headline {
+  margin: 0 0 24px;
+  color: var(--white, #ffffff);
+  font-size: clamp(2.2rem, 6.3vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -.04em;
+}
+
+.hhero-line {
+  display: block;
+}
+
+.hhero-line--accent {
+  color: var(--red, #e11d2e);
+}
+
+.hhero-sub {
+  max-width: 650px;
+  margin: 0 0 32px;
+  color: rgba(255,255,255,.75);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.8;
+}
+
+.hhero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.hhero-btn {
+  padding: 15px 26px;
+}
+
+.hhero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 26px;
+  max-width: 650px;
+  margin: 0;
+  padding: 24px 0 0;
+  border-top: 1px solid rgba(255,255,255,.14);
+  list-style: none;
+}
+
+.hhero-tags li {
+  position: relative;
+  padding-left: 16px;
+  color: rgba(255,255,255,.78);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.hhero-tags li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 7px;
+  height: 2px;
+  background: var(--red, #e11d2e);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 599px) {
+  .hhero-shape--3 {
+    display: none;
+  }
+
+  .hhero-actions {
+    flex-direction: column;
+  }
+
+  .hhero-actions .hhero-btn {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .hhero-tags {
+    gap: 12px 18px;
+  }
+
+  .hhero-headline {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hhero,
+  .hhero * {
+    scroll-behavior: auto;
+    animation: none;
+    transition: none;
+  }
+}
+
   </style>
 </head>
 <body>
