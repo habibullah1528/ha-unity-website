@@ -113,6 +113,7 @@
 
     $("login").hidden = true;
     $("uploader").hidden = false;
+    loadProducts();
     status("Login successful.");
   });
 
@@ -190,6 +191,52 @@ if (productError) {
     $("uploader").hidden = true;
     status("Logged out.");
   });
+  async function loadProducts() {
+  const list = $("productList");
+  list.replaceChildren();
+
+  const { data, error } = await supabase
+    .from("products")
+    .select("id, name, image_url")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    list.textContent = "Error: " + error.message;
+    return;
+  }
+
+  (data || []).forEach(product => {
+    const item = document.createElement("div");
+    const name = document.createElement("p");
+    name.textContent = product.name || "Unnamed product";
+
+    const btn = document.createElement("button");
+    btn.textContent = "Delete";
+    btn.onclick = async () => {
+      if (!confirm("Is product ko delete karna hai?")) return;
+
+      const { error } = await supabase
+        .from("products")
+        .delete()
+        .eq("id", product.id);
+
+      if (error) {
+        alert("Delete nahi hua: " + error.message);
+        return;
+      }
+
+      item.remove();
+      alert("Product deleted.");
+    };
+
+    item.append(name, btn);
+    list.appendChild(item);
+  });
+}
 </script>
+  <section id="productListSection">
+  <h2>Uploaded Products</h2>
+  <div id="productList">Loading products...</div>
+</section>
 </body>
 </html>
