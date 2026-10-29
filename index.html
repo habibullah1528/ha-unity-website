@@ -2274,5 +2274,54 @@ return;
       });
     })();
   </script>
+  <script type="module">
+    import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+    const SUPABASE_URL = "https://pdckdoznpzuvonxkxxow.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_HnGAJ0Mir7d5KRcvWCS7Ew_8hbwalNx";
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function loadSupabaseProducts() {
+      const { data: products, error } = await supabase
+        .from("products")
+        .select("id, name, image_url")
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        console.error("Products load error:", error.message);
+        return;
+      }
+
+      const grid = document.querySelector(".products-grid");
+      if (!grid || !products) return;
+
+      products.forEach((product) => {
+        const article = document.createElement("article");
+        article.className = "product-card reveal";
+
+        const img = document.createElement("img");
+        img.src = product.image_url;
+        img.alt = product.name;
+        img.loading = "lazy";
+        img.style.width = "100%";
+        img.style.height = "auto";
+
+        const title = document.createElement("h3");
+        title.textContent = product.name;
+
+        const body = document.createElement("div");
+        body.className = "product-card-body";
+        body.appendChild(title);
+
+        article.appendChild(img);
+        article.appendChild(body);
+        grid.appendChild(article);
+      });
+    }
+
+    loadSupabaseProducts();
+  </script>
 </body>
 </html>
+
