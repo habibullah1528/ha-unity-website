@@ -163,10 +163,25 @@
     }
 
     const { data } = supabase.storage
-      .from("product-public")
-      .getPublicUrl(path);
+  .from("product-public")
+  .getPublicUrl(path);
 
-    status("Uploaded: " + name + "\nPublic photo URL: " + data.publicUrl);
+const { error: productError } = await supabase
+  .from("products")
+  .insert({
+    name: name,
+    image_url: data.publicUrl
+  });
+
+if (productError) {
+  status(
+    "Photo uploaded, but product details could not be saved: " +
+    productError.message +
+    "\nPublic photo URL: " + data.publicUrl
+  );
+} else {
+  status("Uploaded and saved: " + name);
+}
   });
 
   $("logoutBtn").addEventListener("click", async () => {
