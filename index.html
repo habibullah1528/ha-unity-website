@@ -2309,9 +2309,12 @@ return;
 
         const title = document.createElement("h3");
         title.textContent = product.name;
+        title.style.color = "#ffffff";
 
         const body = document.createElement("div");
         body.className = "hg-card-body";
+        body.style.backgroundColor = "#111111";
+body.style.color = "#ffffff";
         body.appendChild(title);
 
         article.appendChild(img);
