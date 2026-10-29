@@ -2298,7 +2298,7 @@ return;
 
       products.forEach((product) => {
         const article = document.createElement("article");
-        article.className = "product-card reveal";
+        article.className = "hg-card";
 
         const img = document.createElement("img");
         img.src = product.image_url;
@@ -2311,7 +2311,7 @@ return;
         title.textContent = product.name;
 
         const body = document.createElement("div");
-        body.className = "product-card-body";
+        body.className = "hg-card-body";
         body.appendChild(title);
 
         article.appendChild(img);
