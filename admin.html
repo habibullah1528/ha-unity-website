@@ -207,8 +207,24 @@ if (productError) {
 
   (data || []).forEach(product => {
     const item = document.createElement("div");
-    const name = document.createElement("p");
-    name.textContent = product.name || "Unnamed product";
+    const img = document.createElement("img");
+img.src = product.image_url;
+img.alt = product.name || "Product";
+img.style.width = "80px";
+img.style.height = "80px";
+img.style.objectFit = "cover";
+img.style.borderRadius = "8px";
+
+const name = document.createElement("p");
+name.textContent = product.name || "Unnamed product";
+
+item.style.display = "flex";
+item.style.alignItems = "center";
+item.style.gap = "12px";
+item.style.marginBottom = "12px";
+
+item.appendChild(img);
+item.appendChild(name);
 
     const btn = document.createElement("button");
     btn.textContent = "Delete";
